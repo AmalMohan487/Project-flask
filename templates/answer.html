@@ -1,0 +1,37 @@
+{% extends 'user.html' %}
+{% block content %}
+
+<div class="container mt-5">
+    <table class="table table-striped bg-white">
+     {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+                            <h2 style="color:red">{{message}}</h2>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}  
+        <tr>
+            <th>Question</th>
+            <th>Answer</th>
+            <th>date</th>
+            <th>Action</th>
+            
+        </tr>
+    {% for q in qanda %}
+    <tr>
+        <form method="post">
+        <td>{{q['question']}}</td>
+        <td><input name ="ans"type="text" class="form-control" value="{{q['answer']}}"></td>
+        <td>{{q['date']}}</td>
+        <td><button name="submit" type="submit" class="btn btn-warning" value="{{q['id']}}">Submit</button></td>
+        <td>
+
+      
+        </td>
+        </form>
+
+    </tr>
+    {% endfor %}
+    </table>
+</div>
+{% endblock  %}

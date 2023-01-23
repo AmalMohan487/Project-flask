@@ -1,0 +1,12 @@
+{% extends 'user.html' %}
+{%block content%}
+<form method="post">
+
+<textarea class="form-control" name="question" placeholder="ASK your question here   *" id="message" required="" data-validation-required-message="Please enter a message."></textarea>
+<div id="success">
+<div>
+<button type="submit" name="submit" class="btn btn-xl">SUBMIT  </button>
+</div>
+</div>
+</form>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'admin.html' %}
+{% block content %}
+<div class="container">
+    <table class="table table-striped bg-white">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>USER_Name</th>
+            <th>Email</th>
+            <th>User_Type</th>
+
+            <th>Action</th>
+        </tr>
+        {% for item in res %}
+        <tr>
+            <td>{{item["id"]}}</td>
+            <td>{{item["name"]}}</td>
+            <td>{{item["username"]}}</td>
+            <td>{{item["usertype"]}}</td>
+            <td>{{item["email"]}}</td>
+            <form method="post">
+                <td><button name ="submit" type="submit" value="{{item['id']}} " class="btn btn-danger">Delete</button></td>
+            </form>
+
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

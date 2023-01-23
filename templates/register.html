@@ -1,0 +1,36 @@
+ {% extends 'login.html' %}
+ {% block content %}
+ {% with messages = get_flashed_messages() %}
+				{% if messages %}
+				{% for message in messages %}
+				<h2 style="color:red">{{message}}</h2>
+				{% endfor %}
+				{% endif %}
+				{% endwith %}
+ <h2>redister</h2>
+ <form method="post">
+   <div class="user-box">
+     <input type="text" name="name" required>
+     <label>Name</label>
+   </div>
+   <div class="user-box">
+    <input type="text" name="username" required="">
+    <label>Username</label>
+  </div>
+  <label for="utype">User Type</label>
+			<select name="utype" id="">
+				<!--<option value="" selected disabled>Select</option> -->
+				<option value="user">user</option>
+				<option value=""></option>
+			</select> 
+   <div class="user-box">
+    <input type="email" name="email" required="">
+    <label>email</label>
+  </div>
+   <div class="user-box">
+     <input type="password" name="password" required="">
+     <label>Password</label>
+   </div>
+   <button name="submit" type="submit">Sign Up</button>
+ </form>
+ {% endblock  %}

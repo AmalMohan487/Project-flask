@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="container mt-5">
+    <table class="table table-striped bg-white">
+        <tr>
+            <th>Question</th>
+            <th>Answer</th>
+            <th>date</th>
+        </tr>
+    {% for ans in res %}
+    <tr>
+        <form method="post">
+        <td>{{ans['question']}}</td>
+        <td>{{ans['answer']}}</td>
+        <td>{{ans['date']}}</td>
+        
+        </form>
+
+    </tr>
+    {% endfor %}
+    </table>
+</div>
+{% endblock  %}
